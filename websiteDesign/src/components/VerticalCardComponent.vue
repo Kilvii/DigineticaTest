@@ -4,6 +4,13 @@ import CtAButton from './CtAButton.vue';
 import SpecialInfoShiledComponent from '@/components/SpecialInfoShiledComponent.vue';
 import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
 
+const props = defineProps({
+    isAvailable: {
+        type: Boolean,
+        default: true,
+    },
+})
+
 </script>
 
 <template>
@@ -30,7 +37,7 @@ import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
             <span class="main-price">5 999 ₽</span>
         </div>
         <div class="buy-button">
-            <CtAButton title="Купить" color="default"/>
+            <CtAButton title="Купить" color="default" />
         </div>
     </div>
 </template>
@@ -39,12 +46,16 @@ import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
 .vertical-card {
     display: flex;
     flex-direction: column;
-    width: 200px;
+    width: 335px;
     padding: 10px;
 }
 
 .vertical-card>*:not(:last-child) {
     margin-bottom: 10px;
+}
+
+.vertical-card:hover .product-name {
+    color: #125BAE;
 }
 
 .imagery {
@@ -66,7 +77,7 @@ import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
     color: #AAAAAA
 }
 
-.prices{
+.prices {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -78,13 +89,13 @@ import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
 }
 
 .main-price {
-    font-size:12px;
-    color:#AAAAAA;
+    font-size: 12px;
+    color: #AAAAAA;
     text-decoration: line-through;
 }
 
 .sale-price {
-    color:#333333;
+    color: #333333;
     font-weight: 600;
 }
 
@@ -119,5 +130,23 @@ import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 1440px) {
+    .vertical-card {
+        display: flex;
+        flex-direction: column;
+        width: 215px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 376px) {
+    .vertical-card {
+        display: flex;
+        flex-direction: column;
+        width: 165px;
+        padding: 4px;
+    }
 }
 </style>

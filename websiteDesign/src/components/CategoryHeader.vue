@@ -16,19 +16,29 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="header">
+    <div class="header-button" v-if="btnNeed">
         <span>{{ title }}</span>
-        <ClearButtonComponent v-if="btnNeed"/>
+        <ClearButtonComponent />
+    </div>
+    <div class="header" v-else=>
+        <span>{{ title }}</span>
     </div>
 </template>
 
 <style scoped>
-.header {
-    /* padding: 10px; */
+.header-button {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 

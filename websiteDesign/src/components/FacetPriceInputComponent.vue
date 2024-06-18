@@ -19,7 +19,7 @@ const props = defineProps({
 const inputValue = ref('');
 
 const formattedInputValue = computed(() => {
-    return inputValue.value.replace(/[^0-9]/g, '') + '₽';
+    return inputValue.value.replace(/[^0-9]/g, '') + ' ₽';
 });
 
 const handleInput = (event) => {

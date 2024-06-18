@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import CtAButtonCtA from './CtAButton.vue';
+import CtAButton from './CtAButton.vue';
 
 const isHovered = ref(false)
 function onMouseOver() {
@@ -13,6 +13,7 @@ function onMouseLeave() {
 
 function clearInput() {
     model.value = '';
+    isHovered.value = false;
 }
 
 const props = defineProps({

@@ -14,6 +14,10 @@ const props = defineProps({
     btnNeed: {
         type: Boolean,
         default: true,
+    },
+    searchNeed: {
+        type: Boolean,
+        default: true,
     }
 })
 </script>
@@ -21,7 +25,7 @@ const props = defineProps({
 <template>
     <div class="checkbox-filter">
         <CategoryHeader :title="title" :btnNeed="btnNeed"/>
-        <div class="search">
+        <div class="search" v-if="searchNeed">
             <SearchInputComponent v-model.trim="searchInput" placeholder="Поиск" />
         </div>
         <CheckboxLabelComponent :labels="attributeItems" />

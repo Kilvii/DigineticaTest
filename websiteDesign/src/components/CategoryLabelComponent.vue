@@ -3,7 +3,7 @@ import { ref, reactive } from 'vue';
 import CtAButton from './CtAButton.vue';
 const isDropdownOpen = ref(false);
 const isHovered = ref(false);
-const isActive = ref(false);
+
 function onMouseOver() {
     isHovered.value = true;
 }
@@ -13,6 +13,7 @@ function onMouseLeave() {
 function toggleDropdown() {
     isDropdownOpen.value = !isDropdownOpen.value;
 }
+
 const props = defineProps({
     labels: {
         type: Array,
@@ -20,12 +21,11 @@ const props = defineProps({
     },
 })
 </script>
-<!-- :color="isHovered ? 'img_hover' : 'default'" -->
 <template>
     <div class="category-label">
         <div class="filter-label">
             <div class="label" @mouseover="onMouseOver" @mouseleave="onMouseLeave">
-                <CtA
+                <CtAButton
                     :icon="isDropdownOpen ? '../src/icons/Desktop/Arrow Down.svg' : '../src/icons/Desktop/Arrow Right.svg'"
                     @click="toggleDropdown" />
                 <span>Название категории</span>
@@ -34,7 +34,7 @@ const props = defineProps({
         </div>
         <div class="filter-items">
             <ul v-if="isDropdownOpen" class="dropdown-list">
-                <li v-for="item in labels" :key="item.id">
+                <li v-for="item in labels" :key="item.id" >
                     {{ item }}
                     <span class="counter">{{ labels.length }}</span>
                 </li>

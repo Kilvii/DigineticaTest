@@ -24,18 +24,18 @@ const props = defineProps({
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    width: 48px;
+    width: 60px;
 }
 
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: none;
+    border:none;
+    border-bottom: 1px solid;
     cursor: pointer;
     height: inherit;
     width: inherit;
-    text-decoration: underline;
 }
 
 .btn_default {

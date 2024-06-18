@@ -1,26 +1,57 @@
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed, watch, onMounted, onUnmounted } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import CategoryFilterComponent from './components/CategoryFilterComponent.vue';
 import SliderFilterComponent from './components/SliderFilterComponent.vue';
 import CheckboxFilterComponent from './components/CheckboxFilterComponent.vue';
 import VerticalCardComponent from './components/VerticalCardComponent.vue';
+
+const windowWidth = ref(window.innerWidth);
+
+const handleResize = () => {
+     windowWidth.value = window.innerWidth;
+};
+
+onMounted(() => {
+     window.addEventListener('resize', handleResize);
+});
+
+onUnmounted(() => {
+     window.removeEventListener('resize', handleResize);
+});
+
+const isMobile = computed(() => {
+     return windowWidth.value <= 375;
+});
+
 </script>
 
 <template>
      <header>
-          <HeaderComponent />
+          <HeaderComponent :isMobile="isMobile ? true : false" />
      </header>
      <main>
-          <aside>
-               <CategoryFilterComponent />
-               <SliderFilterComponent />
-               <CheckboxFilterComponent title="Бренд" :btnNeed="true" />
-               <CheckboxFilterComponent title="Размер" :btnNeed="false" />
-          </aside>
-          <div class="cards">
-               <div v-for="i in 4" :key="i">
-                    <VerticalCardComponent v-for="j in 3" :key="j" />
+          <div class="desktop" v-if="!isMobile">
+               <aside>
+                    <CategoryFilterComponent />
+                    <SliderFilterComponent />
+                    <CheckboxFilterComponent title="Бренд" :btnNeed="true" :searchNeed="true" />
+                    <CheckboxFilterComponent title="Размер" :btnNeed="false" :searchNeed="false"/>
+               </aside>
+               <div class="cards">
+                    <div v-for="i in 4" :key="i">
+                         <VerticalCardComponent v-for="j in 3" :key="j" />
+                    </div>
+               </div>
+          </div>
+          <div class="mobile" v-else>
+               <div class="title">
+                    <span>Название категории</span>
+               </div>
+               <div class="cards">
+                    <div v-for="i in 2" :key="i">
+                         <VerticalCardComponent v-for="j in 3" :key="j" />
+                    </div>
                </div>
           </div>
      </main>
@@ -31,11 +62,58 @@ import VerticalCardComponent from './components/VerticalCardComponent.vue';
 main {
      display: flex;
      flex-direction: row;
+     background-color: white;
+     padding: 0px 100px;
+     padding-bottom: 10px;
+}
+
+aside {
+     margin-right: 20px;
+}
+
+.title {
+     color: #333333;
+     font-size: 22px;
+     font-weight: 400;
+     width: 100%;
 }
 
 .cards {
      display: grid;
      grid-template-columns: repeat(4, 1fr);
-     gap: 20px;
+     gap: 24px;
 }
+
+.desktop{
+     display: flex;
+     flex-direction:row;
+}
+
+.mobile{
+     width: 100%;
+}
+
+@media (max-width: 1440px) {
+     .cards {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+     }
+}
+
+@media (max-width: 376px) {
+     .cards {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
+     }
+
+     main {
+          display: flex;
+          flex-direction: row;
+          background-color: white;
+          padding: 0px 20px;
+     }
+}
+
 </style>
