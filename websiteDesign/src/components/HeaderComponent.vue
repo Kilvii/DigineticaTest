@@ -16,14 +16,14 @@ const props = defineProps({
 <template>
     <div v-if="!isMobile" class="header-bar">
         <div class="logo">
-            <img class="icon" src="@/icons/Desktop/Logo.svg" alt="Logo icon">
+            <img class="icon" src="@/icons/Logo.svg" alt="Logo icon">
             <span>Логотип</span>
         </div>
         <div class="catalog">
             <span>Каталог</span>
         </div>
         <div class="search">
-            <img class="icon" src="@/icons/Desktop/Search.svg" alt="Search icon">
+            <img class="icon" src="@/icons/Search.svg" alt="Search icon">
             <SearchInputComponent v-model.trim="searchInput" placeholder="Поиск по 100 000 товаров" />
             <div v-if="searchInput.length !== 0" class="submit-button">
                 <CtAButton title="Найти" color="hover" />
@@ -37,7 +37,7 @@ const props = defineProps({
     </div>
     <div v-else class="header-bar-mobile">
         <div class="search-mobile">
-            <img class="icon" src="@/icons/Desktop/Arrow Left.svg" alt="Arrow Left icon">
+            <img class="icon" src="@/icons/Arrow Left.svg" alt="Arrow Left icon">
             <SearchInputComponent v-model.trim="searchInput" />
             <div v-if="searchInput.length !== 0" class="submit-button">
                 <CtAButton title="Найти" color="hover" />

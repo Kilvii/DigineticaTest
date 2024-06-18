@@ -19,7 +19,7 @@ const props = defineProps({
                 <SpecialInfoShiledComponent />
             </div>
             <div class="icon">
-                <img src="@/icons/Desktop/Cube.svg" alt="Cube icon">
+                <img src="@/icons/Cube.svg" alt="Cube icon">
             </div>
             <div class="info">
                 <SaleShieldComponent />

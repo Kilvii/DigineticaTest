@@ -4,7 +4,7 @@
 <template>
     <div class="info-wrap">
         <span>Хит продаж</span>
-        <img class="icon" src="@/icons/Desktop/Fire.svg" alt="Fire icon">
+        <img class="icon" src="@/icons/Fire.svg" alt="Fire icon">
     </div>
 </template>
 

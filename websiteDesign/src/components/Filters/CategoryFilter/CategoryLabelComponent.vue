@@ -26,7 +26,7 @@ const props = defineProps({
         <div class="filter-label">
             <div class="label" @mouseover="onMouseOver" @mouseleave="onMouseLeave">
                 <CtAButton
-                    :icon="isDropdownOpen ? '../src/icons/Desktop/Arrow Down.svg' : '../src/icons/Desktop/Arrow Right.svg'"
+                    :icon="isDropdownOpen ? '../src/icons/Arrow Down.svg' : '../src/icons/Arrow Right.svg'"
                     @click="toggleDropdown" />
                 <span>Название категории</span>
             </div>

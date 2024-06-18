@@ -36,7 +36,7 @@ const model = defineModel()
         <input class="input-field" v-model="model" :placeholder="placeholder" :maxlength="maxLenght" />
         <div v-if="model" class="input-buttons">
             <div class="clear-button" @mouseover="onMouseOver" @mouseleave="onMouseLeave">
-                <CtAButton :icon="isHovered? '../src/icons/Desktop/ClearHover.svg' : '../src/icons/Desktop/ClearDefault.svg'" @click="clearInput" />
+                <CtAButton :icon="isHovered? '../src/icons/ClearHover.svg' : '../src/icons/ClearDefault.svg'" @click="clearInput" />
             </div>
         </div>
     </div>

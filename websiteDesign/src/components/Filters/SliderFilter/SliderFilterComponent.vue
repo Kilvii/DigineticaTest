@@ -10,7 +10,7 @@ import CategoryHeader from '@/components/Filters/CategoryHeader.vue';
         <CategoryHeader title="Цена" :btnNeed=false />
         <div class="filter">
             <FacetPriceInputComponent />
-            <img class="divider" src="@/icons/Desktop/Divider.svg" alt="btn-icon" />
+            <img class="divider" src="@/icons/Divider.svg" alt="btn-icon" />
             <FacetPriceInputComponent prefix="до" />
         </div>
     </div>
