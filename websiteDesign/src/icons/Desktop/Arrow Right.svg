@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="10" height="17" viewBox="0 0 10 17">
+  <desc>Created with Fabric.js 5.2.4</desc>
+  <defs>
+  </defs>
+  <g transform="matrix(1 0 0 1 5 8.5)" id="43463766-fd1c-4da5-a4f0-85d2f0803847">
+    <rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke" x="-5" y="-8.5" rx="0" ry="0" width="10" height="17" />
+  </g>
+  <g transform="matrix(1 0 0 1 5 8.5)" id="3a35dafc-c697-4b36-a3d7-b3daedb9137f">
+  </g>
+  <g transform="matrix(0 -1 1 0 5 8.5)" id="71f4d6d7-c072-4f62-8fac-35dc3e74b5db">
+    <path style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(51,51,51); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" transform=" translate(-8.24, -5)" d="M 7.5341 9.20711 C 7.92463 9.59763 8.55779 9.59763 8.94832 9.20711 L 15.9483 2.20711 C 16.3388 1.81658 16.3388 1.18342 15.9483 0.792893 C 15.5578 0.402369 14.9246 0.402369 14.5341 0.792893 L 8.24121 7.08579 L 1.94832 0.792893 C 1.55779 0.402369 0.924628 0.402369 0.534104 0.792893 C 0.14358 1.18342 0.14358 1.81658 0.534104 2.20711 L 7.5341 9.20711 Z" stroke-linecap="round" />
+  </g>
+</svg>

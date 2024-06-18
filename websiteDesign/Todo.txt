@@ -1,0 +1,2 @@
+Category Label - isActive
+Clear Button - isActive
