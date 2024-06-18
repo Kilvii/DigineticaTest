@@ -58,6 +58,11 @@ const props = defineProps({
     background-color: #E2EFFF;
 }
 
+.btn_unavailable {
+    background-color: #FFFFFF;
+    color:#AAAAAA;
+}
+
 .btn:has(img) {
     width: 24px;
     height: 24px;

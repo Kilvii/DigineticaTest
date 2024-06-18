@@ -1,5 +1,4 @@
 <script setup>
-import { ref, reactive } from 'vue';
 import CheckboxComponent from './CheckboxComponent.vue';
 const props = defineProps({
     labels: {
@@ -8,7 +7,6 @@ const props = defineProps({
     },
 })
 </script>
-<!-- :color="isHovered ? 'img_hover' : 'default'" -->
 <template>
     <div class="container">
         <div class="filter-items">

@@ -1,6 +1,6 @@
 <script setup>
-import { ref, reactive } from 'vue';
-import CtAButton from './CtAButton.vue';
+import { ref } from 'vue';
+import CtAButton from '@/components/CtAButton.vue';
 const isDropdownOpen = ref(false);
 const isHovered = ref(false);
 

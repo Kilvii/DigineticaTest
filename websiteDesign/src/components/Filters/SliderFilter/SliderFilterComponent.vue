@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
-import FacetPriceInputComponent from '@/components/FacetPriceInputComponent.vue';
-import CategoryHeader from '@/components/CategoryHeader.vue';
+import FacetPriceInputComponent from '@/components/Filters/SliderFilter/FacetPriceInputComponent.vue';
+import CategoryHeader from '@/components/Filters/CategoryHeader.vue';
 
 </script>
 

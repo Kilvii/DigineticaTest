@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 import CategoryLabelComponent from './CategoryLabelComponent.vue';
 const dropdownItems = reactive(["Название категории 1", "Название категории 2", "Название категории 3"]);
 </script>

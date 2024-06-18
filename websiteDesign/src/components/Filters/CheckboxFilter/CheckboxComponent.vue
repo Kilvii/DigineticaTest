@@ -1,7 +1,4 @@
 <script setup>
-import { ref } from 'vue';
-import CtAButton from './CtAButton.vue';
-
 const checked = defineModel()
 
 </script>

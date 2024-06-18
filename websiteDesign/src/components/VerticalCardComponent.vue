@@ -1,8 +1,7 @@
 <script setup>
-import { ref, reactive } from 'vue';
 import CtAButton from './CtAButton.vue';
-import SpecialInfoShiledComponent from '@/components/SpecialInfoShiledComponent.vue';
-import SaleShieldComponent from '@/components/SaleShieldComponent.vue';
+import SpecialInfoShiledComponent from '@/components/CardItems/SpecialInfoShiledComponent.vue';
+import SaleShieldComponent from '@/components/CardItems/SaleShieldComponent.vue';
 
 const props = defineProps({
     isAvailable: {
@@ -32,12 +31,19 @@ const props = defineProps({
                 Полное название товара в несколько строк для вида с обрывом в конце...
             </div>
         </div>
-        <div class="prices">
-            <span class="sale-price">5 999 ₽</span>
-            <span class="main-price">5 999 ₽</span>
+        <div class="card-footer" v-if="isAvailable">
+            <div class="prices">
+                <span class="sale-price">5 999 ₽</span>
+                <span class="main-price">5 999 ₽</span>
+            </div>
+            <div class="buy-button">
+                <CtAButton title="Купить" color="default" />
+            </div>
         </div>
-        <div class="buy-button">
-            <CtAButton title="Купить" color="default" />
+        <div v-else>
+            <div class="alert-button">
+                <CtAButton title="Сообщить о поступлении" color="unavailable" />
+            </div>
         </div>
     </div>
 </template>
@@ -56,6 +62,7 @@ const props = defineProps({
 
 .vertical-card:hover .product-name {
     color: #125BAE;
+    cursor: pointer;
 }
 
 .imagery {
@@ -99,6 +106,14 @@ const props = defineProps({
     font-weight: 600;
 }
 
+.alert-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .buy-button {
     display: flex;
     flex-direction: column;
@@ -119,6 +134,9 @@ const props = defineProps({
     margin-bottom: 10px;
 }
 
+.card-footer>*:not(:last-child) {
+    margin-bottom: 10px;
+}
 
 .info {
     display: flex;

@@ -1,9 +1,9 @@
 <script setup>
-import { ref, reactive, computed, watch, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
-import CategoryFilterComponent from './components/CategoryFilterComponent.vue';
-import SliderFilterComponent from './components/SliderFilterComponent.vue';
-import CheckboxFilterComponent from './components/CheckboxFilterComponent.vue';
+import CategoryFilterComponent from './components/Filters/CategoryFilter/CategoryFilterComponent.vue';
+import SliderFilterComponent from './components/Filters/SliderFilter/SliderFilterComponent.vue';
+import CheckboxFilterComponent from './components/Filters/CheckboxFilter/CheckboxFilterComponent.vue';
 import VerticalCardComponent from './components/VerticalCardComponent.vue';
 
 const windowWidth = ref(window.innerWidth);
@@ -40,7 +40,9 @@ const isMobile = computed(() => {
                </aside>
                <div class="cards">
                     <div v-for="i in 4" :key="i">
-                         <VerticalCardComponent v-for="j in 3" :key="j" />
+                         <VerticalCardComponent />
+                         <VerticalCardComponent :isAvailable="false" />
+                         <VerticalCardComponent />
                     </div>
                </div>
           </div>
@@ -50,7 +52,9 @@ const isMobile = computed(() => {
                </div>
                <div class="cards">
                     <div v-for="i in 2" :key="i">
-                         <VerticalCardComponent v-for="j in 3" :key="j" />
+                         <VerticalCardComponent />
+                         <VerticalCardComponent :isAvailable="false" />
+                         <VerticalCardComponent />
                     </div>
                </div>
           </div>

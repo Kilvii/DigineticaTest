@@ -1,8 +1,8 @@
 <script setup>
 import { ref, reactive } from 'vue';
-import CategoryHeader from '@/components/CategoryHeader.vue';
+import CategoryHeader from '@/components/Filters/CategoryHeader.vue';
 import SearchInputComponent from '@/components/SearchInputComponent.vue';
-import CheckboxLabelComponent from '@/components/CheckboxLabelComponent.vue';
+import CheckboxLabelComponent from '@/components/Filters/CheckboxFilter/CheckboxLabelComponent.vue';
 const searchInput = ref('');
 const attributeItems = reactive(["Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут"]);
 
