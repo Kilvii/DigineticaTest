@@ -1,10 +1,14 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted, reactive } from 'vue';
 import HeaderComponent from './components/HeaderComponent.vue';
 import CategoryFilterComponent from './components/Filters/CategoryFilter/CategoryFilterComponent.vue';
 import SliderFilterComponent from './components/Filters/SliderFilter/SliderFilterComponent.vue';
 import CheckboxFilterComponent from './components/Filters/CheckboxFilter/CheckboxFilterComponent.vue';
 import VerticalCardComponent from './components/VerticalCardComponent.vue';
+
+const brandAttributes = reactive(["Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут"]);
+const sizeAttributes = reactive(["Атрибут", "Атрибут", "Атрибут", "Атрибут", "Атрибут"]);
+
 
 const windowWidth = ref(window.innerWidth);
 
@@ -35,8 +39,8 @@ const isMobile = computed(() => {
                <aside>
                     <CategoryFilterComponent />
                     <SliderFilterComponent />
-                    <CheckboxFilterComponent title="Бренд" :btnNeed="true" :searchNeed="true" />
-                    <CheckboxFilterComponent title="Размер" :btnNeed="false" :searchNeed="false"/>
+                    <CheckboxFilterComponent title="Бренд" :btnNeed="true" :searchNeed="true" :attribute-items="brandAttributes"/>
+                    <CheckboxFilterComponent title="Размер" :btnNeed="false" :searchNeed="false" :attribute-items="sizeAttributes"/>
                </aside>
                <div class="cards">
                     <div v-for="i in 4" :key="i">

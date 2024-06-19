@@ -13,7 +13,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="vertical-card">
+    <div class="vertical-card-avail" v-if="isAvailable">
         <div class="imagery">
             <div class="info">
                 <SpecialInfoShiledComponent />
@@ -31,48 +31,83 @@ const props = defineProps({
                 Полное название товара в несколько строк для вида с обрывом в конце...
             </div>
         </div>
-        <div class="card-footer" v-if="isAvailable">
-            <div class="prices">
-                <span class="sale-price">5 999 ₽</span>
-                <span class="main-price">5 999 ₽</span>
+        <div class="prices">
+            <span class="sale-price">5 999 ₽</span>
+            <span class="main-price">5 999 ₽</span>
+        </div>
+        <div class="buy-button">
+            <CtAButton title="Купить" color="default" />
+        </div>
+    </div>
+    <div class="vertical-card-unavail" v-else>
+        <div class="imagery">
+            <div class="info">
+                <SpecialInfoShiledComponent />
             </div>
-            <div class="buy-button">
-                <CtAButton title="Купить" color="default" />
+            <div class="icon">
+                <img src="@/icons/Cube.svg" alt="Cube icon" >
+            </div>
+            <div class="info">
+                <SaleShieldComponent />
             </div>
         </div>
-        <div v-else>
-            <div class="alert-button">
-                <CtAButton title="Сообщить о поступлении" color="unavailable" />
+        <div class="labels">
+            <span>Бренд</span>
+            <div class="product-name">
+                Полное название товара в несколько строк для вида с обрывом в конце...
             </div>
+        </div>
+        <div class="alert-button">
+            <CtAButton title="Сообщить о поступлении" color="unavailable" />
         </div>
     </div>
 </template>
 
 <style scoped>
-.vertical-card {
+.vertical-card-avail, .vertical-card-unavail {
     display: flex;
     flex-direction: column;
     width: 335px;
     padding: 10px;
 }
 
-.vertical-card>*:not(:last-child) {
+.vertical-card-avail>*:not(:last-child) {
     margin-bottom: 10px;
 }
 
-.vertical-card:hover .product-name {
+.vertical-card-unavail>*:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.vertical-card-avail:hover .product-name {
     color: #125BAE;
     cursor: pointer;
+}
+
+.vertical-card-avail:hover .icon img {
+    width: 82px;
+    height: 82px;
+}
+
+.vertical-card-unavail:hover .product-name {
+    color: #125BAE;
+    cursor: pointer;
+}
+
+.vertical-card-unavail:hover .icon img {
+    width: 82px;
+    height: 82px;
 }
 
 .imagery {
     display: flex;
     flex-direction: column;
     background-color: #F8F8FA;
+    height:200px;
 }
 
 .imagery>*:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: auto;
 }
 
 .labels {
@@ -106,7 +141,7 @@ const props = defineProps({
     font-weight: 600;
 }
 
-.alert-button{
+.alert-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -150,8 +185,12 @@ const props = defineProps({
     justify-content: center;
 }
 
+.vertical-card-unavail .icon img {
+    opacity: 50%;
+}
+
 @media (max-width: 1440px) {
-    .vertical-card {
+    .vertical-card-avail, .vertical-card-unavail {
         display: flex;
         flex-direction: column;
         width: 215px;
@@ -160,7 +199,7 @@ const props = defineProps({
 }
 
 @media (max-width: 376px) {
-    .vertical-card {
+    .vertical-card-avail, .vertical-card-unavail {
         display: flex;
         flex-direction: column;
         width: 165px;
